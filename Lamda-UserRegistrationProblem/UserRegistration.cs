@@ -27,5 +27,20 @@ namespace Lamda_UserRegistrationProblem
                 }
             }                   
         }
+        public void UserLast(string name)
+        {
+            var last = name.Where(x => Regex.IsMatch(name, USER_NAME));
+            string filteredName = string.Concat(last);
+            {
+                if (filteredName.Equals(name))
+                {
+                    Console.WriteLine("Valid");
+                }
+                else
+                {
+                    Console.WriteLine("InValid");
+                }
+            }
+        }
     }
 }

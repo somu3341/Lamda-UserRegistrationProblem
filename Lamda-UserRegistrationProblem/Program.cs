@@ -8,7 +8,7 @@ namespace Lamda_UserRegistrationProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose Option to Perform\n1.First Name\n2.Exit");
+                Console.WriteLine("Choose Option to Perform\n1.First Name\n2.Last Name\n3.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 UserRegistration user = new UserRegistration();
                 switch (option)
@@ -18,7 +18,12 @@ namespace Lamda_UserRegistrationProblem
                         string name = Console.ReadLine();
                         user.UserFirst(name);
                         break;
-                        case 2:
+                    case 2:
+                        Console.WriteLine("Enter Last Name");
+                        string second = Console.ReadLine();
+                        user.UserFirst(second);
+                        break;
+                    case 3:
                         flag = false;
                         break;
                 }
