@@ -8,7 +8,7 @@ namespace Lamda_UserRegistrationProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose Option to Perform\n1.First Name\n2.Last Name\n3.Exit");
+                Console.WriteLine("Choose Option to Perform\n1.First Name\n2.Last Name\n3.Email ID\n4.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 UserRegistration user = new UserRegistration();
                 switch (option)
@@ -24,12 +24,15 @@ namespace Lamda_UserRegistrationProblem
                         user.UserFirst(second);
                         break;
                     case 3:
+                        Console.WriteLine("Enetr Email Id");
+                        string email= Console.ReadLine();
+                        user.Email(email);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
-            }
-           
-            
+            }           
         }
     }
 }
