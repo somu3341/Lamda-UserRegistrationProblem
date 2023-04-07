@@ -14,7 +14,7 @@ namespace Lamda_UserRegistrationProblem
         public const string USER_NAME = "^[A-Z]{1}[a-z]{2,}";
         public const string EMAIL = "^[A-Za-z]{3,}[.]{0,}[a-zA-Z]{3,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{1}[a-z]{2,}$";
         public const string PHONE_NUMBER = "[0-9]{2,}\\s[6-9]{1}[0-9]{9}$";
-        public const string PASSWORD_RULE = "^[A-Za-z0-9]{8,}";
+        public const string PASSWORD_RULE = "^[A-Za-z]{4,}[!+@+#+$+%+^+&+*+(+)+_+++~+.+,]{1,}[0-9]{3,}$";
         public void UserFirst(string name)
         {
             var first = name.Where(x => Regex.IsMatch(name, USER_NAME));
@@ -113,6 +113,21 @@ namespace Lamda_UserRegistrationProblem
                 if (filteredName.Equals(pass3))
                 {
                     Console.WriteLine("Password Rule-3 is Valid");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid");
+                }
+            }
+        }
+        public void PasswordRule4(string pass4)
+        {
+            var rule4 = pass4.Where(x => Regex.IsMatch(pass4, PASSWORD_RULE));
+            string filteredName = string.Concat(rule4);
+            {
+                if (filteredName.Equals(pass4))
+                {
+                    Console.WriteLine("Password Rule-4 is Valid");
                 }
                 else
                 {
