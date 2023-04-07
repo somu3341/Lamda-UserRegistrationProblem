@@ -8,7 +8,7 @@ namespace Lamda_UserRegistrationProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose Option to Perform\n1.First Name\n2.Last Name\n3.Email ID\n4.Phone NUmber\n5.Password(Rule-1)\n6.Exit");
+                Console.WriteLine("Choose Option to Perform\n1.First Name\n2.Last Name\n3.Email ID\n4.Phone NUmber\n5.Password(Rule-1)\n6.Password(Rule-2)\n7.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 UserRegistration user = new UserRegistration();
                 switch (option)
@@ -38,7 +38,12 @@ namespace Lamda_UserRegistrationProblem
                         string rule= Console.ReadLine();
                         user.PasswordRule1(rule);
                         break;
-                    case 6:
+                        case 6:
+                        Console.WriteLine("Enter Password Rule2(1-Uppercase)(Min-8char)");
+                        string rule2 = Console.ReadLine();
+                        user.PasswordRule2(rule2);
+                        break;
+                    case 7:
                         flag = false;
                         break;
                 }
