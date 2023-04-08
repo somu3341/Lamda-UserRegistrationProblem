@@ -50,7 +50,7 @@ namespace Lamda_UserRegistrationProblem
             {
                 if (filteredName.Equals(email))
                 {
-                    Console.WriteLine("Valid");
+                    Console.WriteLine("Email ID is Valid");
                 }
                 else
                 {
