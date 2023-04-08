@@ -29,12 +29,12 @@ namespace Lamda_UserRegistrationProblem
         }
         public void UserLast(string name)
         {
-            var last = name.Where(x => Regex.IsMatch(name, USER_NAME));
+            var last = name.Where(x => x.Equals(Regex.IsMatch(name, USER_NAME)));
             string filteredName = string.Concat(last);
             {
                 if (filteredName.Equals(name))
                 {
-                    Console.WriteLine("Valid");
+                    Console.WriteLine("Last Name is Valid");
                 }
                 else
                 {
