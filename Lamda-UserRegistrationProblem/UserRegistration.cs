@@ -122,7 +122,7 @@ namespace Lamda_UserRegistrationProblem
         }
         public void PasswordRule4(string pass4)
         {
-            var rule4 = pass4.Where(x => Regex.IsMatch(pass4, PASSWORD_RULE));
+            var rule4 = pass4.Where(x => x.Equals(Regex.IsMatch(pass4, PASSWORD_RULE)));
             string filteredName = string.Concat(rule4);
             {
                 if (filteredName.Equals(pass4))
