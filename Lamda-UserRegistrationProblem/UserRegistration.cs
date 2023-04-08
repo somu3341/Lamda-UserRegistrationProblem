@@ -77,7 +77,7 @@ namespace Lamda_UserRegistrationProblem
         }
         public void PasswordRule1(string pass1)
         {
-            var rule1 = pass1.Where(x => Regex.IsMatch(pass1, PASSWORD_RULE));
+            var rule1 = pass1.Where(x => (Regex.IsMatch(pass1, PASSWORD_RULE)));
             string filteredName = string.Concat(rule1);
             {
                 if (filteredName.Equals(pass1))
