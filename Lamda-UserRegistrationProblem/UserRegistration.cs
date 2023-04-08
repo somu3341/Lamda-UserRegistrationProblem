@@ -11,7 +11,7 @@ namespace Lamda_UserRegistrationProblem
 {
     public class UserRegistration
     {
-        public const string USER_NAME = "^[A-Z]{1}[a-z]{2,}";
+        public const string USER_NAME = "^[A-Z]{1,}[a-z]{2,}";
         public void UserFirst(string name)
         {
             var first = name.Where(x => Regex.IsMatch(name, USER_NAME));
@@ -19,7 +19,7 @@ namespace Lamda_UserRegistrationProblem
             {
                 if (filteredName.Equals(name))
                 {
-                    Console.WriteLine("Valid");
+                    Console.WriteLine("First Name is Valid");
                 }
                 else
                 {
