@@ -9,7 +9,8 @@ namespace Lamda_UserRegistrationProblem
             while (flag)
             {
                 Console.WriteLine("Choose Option to Perform\n1.First Name\n2.Last Name\n3.Email ID" +
-                    "\n4.Phone NUmber\n5.Password(Rule-1)\n6.Password(Rule-2)\n7.Password(Rule-3)\n8.Password(Rule-4)\n9.Exit");
+                    "\n4.Phone NUmber\n5.Password(Rule-1)\n6.Password(Rule-2)\n7.Password(Rule-3)\n8.Password(Rule-4)" +
+                    "\n9.All Emails\n10.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 UserRegistration user = new UserRegistration();
                 switch (option)
@@ -55,6 +56,9 @@ namespace Lamda_UserRegistrationProblem
                         user.PasswordRule2(rule4);
                         break;
                     case 9:
+                        user.AllEmail();
+                        break;
+                    case 10:
                         flag = false;
                         break;
                 }

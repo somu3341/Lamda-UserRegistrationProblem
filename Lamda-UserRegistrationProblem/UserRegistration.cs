@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
@@ -15,6 +16,13 @@ namespace Lamda_UserRegistrationProblem
         public const string EMAIL = "^[A-Za-z]{3,}[.]{0,}[a-zA-Z]{3,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{1}[a-z]{2,}$";
         public const string PHONE_NUMBER = "[0-9]{2,}\\s[6-9]{1}[0-9]{9}$";
         public const string PASSWORD_RULE = "^[A-Za-z]{4,}[!+@+#+$+%+^+&+*+(+)+_+++~+.+,]{1,}[0-9]{3,}$";
+        public const string ALLEMAIL = "^[a-z]{1,}([-.+]{1}){0,1}([0-9]{1,}){0,1}[@]{1}[a-z0-9]{1,}[.][a-zA-Z]{2,3}([.]{1}[a-z]{2,3}){0,1}$";
+        string[] mail = { "abc@yahoo.com", "abc-100@yahoo.com",
+            "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net",
+            " abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com",
+            "abc@.com.my", "abc123@gmail.a", "abc123@.com", "abc123@.com.com", ".abc@abc.com",
+            "abc()*@gmail.com", "abc..2002@gmail.com", "abc.@gmail.com", "bc@abc@gmail.com",
+            "abc@%*.com", "abc@gmail.com.1a", "abc@gmail.com.aa.au" };
         public void UserFirst(string name)
         {
             var first = name.Where(x => Regex.IsMatch(name, USER_NAME));
@@ -132,6 +140,24 @@ namespace Lamda_UserRegistrationProblem
                 else
                 {
                     Console.WriteLine("Invalid");
+                }
+            }
+        }
+        public void AllEmail()
+        {
+            for (int i=0; i<mail.Length; i++)
+            {
+                var all = mail[i].Where(x => Regex.IsMatch(mail[i], ALLEMAIL));
+                string filteredName = string.Concat(all);
+                {
+                    if (filteredName.Equals(mail[i]))
+                    {
+                        Console.WriteLine(mail[i] + "-----> Is Valid");
+                    }
+                    else
+                    {
+                        Console.WriteLine(mail[i]+"-------> Not Valid");
+                    }
                 }
             }
         }
