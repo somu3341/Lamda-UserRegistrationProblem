@@ -24,15 +24,15 @@ namespace UserRegistartion
             catch(UserException)
             {
                 throw new UserException(UserException.ExceptionType.INVALID, "Message is InValid");
-            }
+            }            
         }
         public string UserLast()
         {
             try
             {
                 if (Regex.IsMatch(message, USER_NAME))
-                    return "InValid";
-                return "Valid";
+                    return "Valid";
+                return "InValid";
             }
             catch (UserException)
             {

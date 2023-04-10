@@ -17,18 +17,9 @@ namespace Lamda_UserRegistrationProblem
         public const string PHONE_NUMBER = "[0-9]{2,}\\s[6-9]{1}[0-9]{9}$";
         public const string PASSWORD_RULE = "^[A-Za-z]{4,}[!+@+#+$+%+^+&+*+(+)+_+++~+.+,]{1,}[0-9]{3,}$";
         public const string ALLEMAIL = @"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})(\.[a-zA-Z]{2,5})?$";
-        string[] mails = { "abc@yahoo.com", "abc-100@yahoo.com",
-            "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net",
-            " abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com",
-            "abc@.com.my", "abc123@gmail.a", "abc123@.com", "abc123@.com.com", ".abc@abc.com",
-            "abc()*@gmail.com", "abc..2002@gmail.com", "abc.@gmail.com", "bc@abc@gmail.com",
-            "abc@%*.com", "abc@gmail.com.1a", "abc@gmail.com.aa.au" };
-               public void UserFirst(string name)
+        public void UserFirst(string name)
         {
-            if (Regex.IsMatch(name, USER_NAME))
-                Console.WriteLine("First Name Valid");
-            else
-                Console.WriteLine("Not Valid");
+            bool ValidateFirstNameByLamda()=>Regex.IsMatch(Console.ReadLine(), );
         }
         public void UserLast(string lastname)
         {
@@ -79,17 +70,7 @@ namespace Lamda_UserRegistrationProblem
                 Console.WriteLine("Password is Valid");
             else
                 Console.WriteLine("Not Valid");
-        }
-        public void AllEmails()
-        {
-            for (int i = 0; i < mails.Length; i++)
-            {
-                if (Regex.IsMatch(mails[i], ALLEMAIL))
-                    Console.WriteLine(mails[i] + " ----> Valid");
-                else
-                    Console.WriteLine(mails[i] + " -----> Invalid");
-            }
-        }
+        }      
     }
 }
 
