@@ -17,123 +17,60 @@ namespace Lamda_UserRegistrationProblem
         public const string PASSWORD_RULE = "^[A-Za-z]{4,}[!+@+#+$+%+^+&+*+(+)+_+++~+.+,]{1,}[0-9]{3,}$";
         public void UserFirst(string name)
         {
-            var first = name.Where(x => Regex.IsMatch(name, USER_NAME));
-            string filteredName = string.Concat(first);
-            {
-                if (filteredName.Equals(name))
-                {
-                    Console.WriteLine("First Name is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }                   
+            if (Regex.IsMatch(name, USER_NAME))
+                Console.WriteLine("First Name Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
-        public void UserLast(string name)
+        public void UserLast(string lastname)
         {
-            var last = name.Where(x => Regex.IsMatch(name, USER_NAME));
-            string filteredName = string.Concat(last);
-            {
-                if (filteredName.Equals(name))
-                {
-                    Console.WriteLine("Last Name is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }
+            if (Regex.IsMatch(lastname, USER_NAME))
+                Console.WriteLine("Last Name Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
         public void Email(string email)
         {
-            var mail = email.Where(x => Regex.IsMatch(email, EMAIL));
-            string filteredName = string.Concat(mail);
-            {
-                if (filteredName.Equals(email))
-                {
-                    Console.WriteLine("Email is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }
+            if (Regex.IsMatch(email, EMAIL))
+                Console.WriteLine("Email is Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
         public void PhoneNumber(string number)
         {
-            var num = number.Where(x => Regex.IsMatch(number, PHONE_NUMBER));
-            string filteredName = string.Concat(num);
-            {
-                if (filteredName.Equals(number))
-                {
-                    Console.WriteLine("Phone Number is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid");
-                }
-            }
+            if (Regex.IsMatch(number, PHONE_NUMBER))
+                Console.WriteLine("Mobile Number is Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
         public void PasswordRule1(string pass1)
         {
-            var rule1 = pass1.Where(x => Regex.IsMatch(pass1, PASSWORD_RULE));
-            string filteredName = string.Concat(rule1);
-            {
-                if (filteredName.Equals(pass1))
-                {
-                    Console.WriteLine("Password Rule-1 is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid");
-                }
-            }
+
+            if (Regex.IsMatch(pass1, PASSWORD_RULE))
+                Console.WriteLine("Password is Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
         public void PasswordRule2(string pass2)
         {
-            var rule2 = pass2.Where(x => Regex.IsMatch(pass2, PASSWORD_RULE));
-            string filteredName = string.Concat(rule2);
-            {
-                if (filteredName.Equals(pass2))
-                {
-                    Console.WriteLine("Password Rule-2 is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid");
-                }
-            }
+            if (Regex.IsMatch(pass2, PASSWORD_RULE))
+                Console.WriteLine("Password is Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
         public void PasswordRule3(string pass3)
         {
-            var rule3 = pass3.Where(x => Regex.IsMatch(pass3, PASSWORD_RULE));
-            string filteredName = string.Concat(rule3);
-            {
-                if (filteredName.Equals(pass3))
-                {
-                    Console.WriteLine("Password Rule-3 is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid");
-                }
-            }
+            if (Regex.IsMatch(pass3, PASSWORD_RULE))
+                Console.WriteLine("Password is Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
         public void PasswordRule4(string pass4)
         {
-            var rule4 = pass4.Where(x => x.Equals(Regex.IsMatch(pass4, PASSWORD_RULE)));
-            string filteredName = string.Concat(rule4);
-            {
-                if (filteredName.Equals(pass4))
-                {
-                    Console.WriteLine("Password Rule-4 is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid");
-                }
-            }
+            if (Regex.IsMatch(pass4, PASSWORD_RULE))
+                Console.WriteLine("Password is Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
     }
 }
