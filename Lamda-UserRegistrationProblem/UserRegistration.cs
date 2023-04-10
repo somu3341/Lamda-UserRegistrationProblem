@@ -14,18 +14,10 @@ namespace Lamda_UserRegistrationProblem
         public const string USER_NAME = "^[A-Z]{1,}[a-z]{2,}";
         public void UserFirst(string name)
         {
-            var first = name.Where(x => Regex.IsMatch(name, USER_NAME));
-            string filteredName = string.Concat(first);
-            {
-                if (filteredName.Equals(name))
-                {
-                    Console.WriteLine("First Name is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }                   
+            if (Regex.IsMatch(name, USER_NAME))
+                Console.WriteLine("First Name Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
     }
 }
