@@ -56,7 +56,7 @@ namespace Lamda_UserRegistrationProblem
                         user.PasswordRule2(rule4);
                         break;
                     case 9:
-                        user.AllEmail();
+                        user.AllEmails();
                         break;
                     case 10:
                         flag = false;
