@@ -15,48 +15,24 @@ namespace Lamda_UserRegistrationProblem
         public const string EMAIL = "^[A-Za-z]{3,}[.]{0,}[a-zA-Z]{3,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{1}[a-z]{2,}$";
         public void UserFirst(string name)
         {
-            var first = name.Where(x => Regex.IsMatch(name, USER_NAME));
-            string filteredName = string.Concat(first);
-            {
-                if (filteredName.Equals(name))
-                {
-                    Console.WriteLine("Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }                   
+            if (Regex.IsMatch(name, USER_NAME))
+                Console.WriteLine("First Name Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
-        public void UserLast(string name)
+        public void UserLast(string lastname)
         {
-            var last = name.Where(x => Regex.IsMatch(name, USER_NAME));
-            string filteredName = string.Concat(last);
-            {
-                if (filteredName.Equals(name))
-                {
-                    Console.WriteLine("Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }
+            if (Regex.IsMatch(lastname, USER_NAME))
+                Console.WriteLine("Last Name Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
         public void Email(string email)
         {
-            var mail = email.Where(x => Regex.IsMatch(email, EMAIL));
-            string filteredName = string.Concat(mail);
-            {
-                if (filteredName.Equals(email))
-                {
-                    Console.WriteLine("Email ID is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }
+            if (Regex.IsMatch(email, EMAIL))
+                Console.WriteLine("Email is Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
     }
 }
