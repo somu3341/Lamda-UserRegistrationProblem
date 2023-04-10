@@ -7,6 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Lamda_UserRegistrationProblem
 {
@@ -15,62 +16,13 @@ namespace Lamda_UserRegistrationProblem
         public const string USER_NAME = "^[A-Z]{1}[a-z]{2,}";
         public const string EMAIL = "^[A-Za-z]{3,}[.]{0,}[a-zA-Z]{3,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{1}[a-z]{2,}$";
         public const string PHONE_NUMBER = "[0-9]{2,}\\s[6-9]{1}[0-9]{9}$";
-        public const string PASSWORD_RULE = "^[A-Za-z]{4,}[!+@+#+$+%+^+&+*+(+)+_+++~+.+,]{1,}[0-9]{3,}$";
-        public const string ALLEMAIL = @"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})(\.[a-zA-Z]{2,5})?$";
-        public void UserFirst(string name)
-        {
-            bool ValidateFirstNameByLamda()=>Regex.IsMatch(Console.ReadLine(), );
-        }
-        public void UserLast(string lastname)
-        {
-            if (Regex.IsMatch(lastname, USER_NAME))
-                Console.WriteLine("Last Name Valid");
-            else
-                Console.WriteLine("Not Valid");
-        }
-        public void Email(string email)
-        {
-            if (Regex.IsMatch(email, EMAIL))
-                Console.WriteLine("Email is Valid");
-            else
-                Console.WriteLine("Not Valid");
-        }
-        public void PhoneNumber(string number)
-        {
-            if (Regex.IsMatch(number, PHONE_NUMBER))
-                Console.WriteLine("Mobile Number is Valid");
-            else
-                Console.WriteLine("Not Valid");
-        }
-        public void PasswordRule1(string pass1)
-        {
+        public const string PASSWORD_RULE = "^[A-Za-z]{4,}[!+@+#+$+%+^+&+*+(+)+_+++~+.+,]{1,}[0-9]{3,}$";       
+        public static string ValidationFirstName_Lamda(string input) => Regex.IsMatch(input, USER_NAME) ? "Name is Valid" : "Name is Invalid";
+        public static string ValidationLastName_Lamda(string input) => Regex.IsMatch(input, USER_NAME) ? "Name is Valid" : "Name is Invalid";
+        public static string ValidationPhoneNUmner_Lamda(string input) => Regex.IsMatch(input, PHONE_NUMBER) ? "Name is Valid" : "Name is Invalid";
+        public static string ValidationEmail_Lamda(string input) => Regex.IsMatch(input, EMAIL) ? "Name is Valid" : "Name is Invalid";
+        public static string ValidationPassword_Lamda(string input) => Regex.IsMatch(input, PASSWORD_RULE) ? "Name is Valid" : "Name is Invalid";
 
-            if (Regex.IsMatch(pass1, PASSWORD_RULE))
-                Console.WriteLine("Password is Valid");
-            else
-                Console.WriteLine("Not Valid");
-        }
-        public void PasswordRule2(string pass2)
-        {
-            if (Regex.IsMatch(pass2, PASSWORD_RULE))
-                Console.WriteLine("Password is Valid");
-            else
-                Console.WriteLine("Not Valid");
-        }
-        public void PasswordRule3(string pass3)
-        {
-            if (Regex.IsMatch(pass3, PASSWORD_RULE))
-                Console.WriteLine("Password is Valid");
-            else
-                Console.WriteLine("Not Valid");
-        }
-        public void PasswordRule4(string pass4)
-        {
-            if (Regex.IsMatch(pass4, PASSWORD_RULE))
-                Console.WriteLine("Password is Valid");
-            else
-                Console.WriteLine("Not Valid");
-        }      
     }
 }
 
