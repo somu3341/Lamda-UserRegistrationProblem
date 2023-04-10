@@ -21,7 +21,7 @@ namespace Lamda_UserRegistrationProblem
                     case 2:
                         Console.WriteLine("Enter Last Name");
                         string second = Console.ReadLine();
-                        user.UserFirst(second);
+                        user.UserLast(second);
                         break;
                     case 3:
                         flag = false;
