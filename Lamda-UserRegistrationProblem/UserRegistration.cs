@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -16,63 +17,31 @@ namespace Lamda_UserRegistrationProblem
         public const string PHONE_NUMBER = "[0-9]{2,}\\s[6-9]{1}[0-9]{9}$";
         public void UserFirst(string name)
         {
-            var first = name.Where(x => Regex.IsMatch(name, USER_NAME));
-            string filteredName = string.Concat(first);
-            {
-                if (filteredName.Equals(name))
-                {
-                    Console.WriteLine("First Name is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }                   
+            if (Regex.IsMatch(name, USER_NAME))
+                Console.WriteLine("First Name Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
-        public void UserLast(string name)
+        public void UserLast(string lastname)
         {
-            var last = name.Where(x => Regex.IsMatch(name, USER_NAME));
-            string filteredName = string.Concat(last);
-            {
-                if (filteredName.Equals(name))
-                {
-                    Console.WriteLine("Last Name is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }
+            if (Regex.IsMatch(lastname, USER_NAME))
+                Console.WriteLine("Last Name Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
         public void Email(string email)
         {
-            var mail = email.Where(x => Regex.IsMatch(email, EMAIL));
-            string filteredName = string.Concat(mail);
-            {
-                if (filteredName.Equals(email))
-                {
-                    Console.WriteLine("Email is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("InValid");
-                }
-            }
+            if (Regex.IsMatch(email, EMAIL))
+                Console.WriteLine("Email is Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
         public void PhoneNumber(string number)
         {
-            var num = number.Where(x => Regex.IsMatch(number, PHONE_NUMBER));
-            string filteredName = string.Concat(num);
-            {
-                if (filteredName.Equals(number))
-                {
-                    Console.WriteLine("Phone Number is Valid");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid");
-                }
-            }
+            if (Regex.IsMatch(number, PHONE_NUMBER))
+                Console.WriteLine("Mobile Number is Valid");
+            else
+                Console.WriteLine("Not Valid");
         }
     }
 }
